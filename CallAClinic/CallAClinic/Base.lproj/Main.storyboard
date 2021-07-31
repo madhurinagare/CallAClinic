@@ -15,9 +15,50 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGg-8y-GE6">
+                                <rect key="frame" x="0.0" y="0.0" width="810" height="50"/>
+                                <color key="backgroundColor" red="0.63644684278933317" green="0.91684199036890646" blue="0.61356511485664278" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dfC-PK-c6q"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Welcome Madhuri!">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="24" name="Rockwell-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="60" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Temperature:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXL-6i-Z7J">
+                                <rect key="frame" x="60" y="70" width="207.5" height="34"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UrG-pu-XPf" userLabel="TemperatureChart" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="248" y="369" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tGg-8y-GE6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3uk-bb-XR8"/>
+                            <constraint firstItem="ZXL-6i-Z7J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="Sy7-Hj-x4B"/>
+                            <constraint firstItem="tGg-8y-GE6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d8d-Vk-JRf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tGg-8y-GE6" secondAttribute="trailing" id="hjZ-yu-gzp"/>
+                            <constraint firstItem="ZXL-6i-Z7J" firstAttribute="top" secondItem="tGg-8y-GE6" secondAttribute="bottom" constant="20" id="xPU-te-M89"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="TemperatureChart" destination="UrG-pu-XPf" id="VAx-HT-eJi"/>
+                        <outlet property="temperaturelabel" destination="ZXL-6i-Z7J" id="8qm-Cq-in1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
